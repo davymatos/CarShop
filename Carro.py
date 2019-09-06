@@ -38,7 +38,7 @@ class Carro(Veiculo):
         self.cor = cor
 
 
-c1 = Carro()
+c1 = Carro("Ford", "Ranger", 2019, "Branco")
 c1.marca = input("DIGITE O NOME DA MARCA: ")
 c1.modelo = input("DIGITE O NOME DA MODELO: ")
 c1.ano = input("DIGITE O NOME DA ANO: ")
