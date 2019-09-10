@@ -1,9 +1,17 @@
 class Veiculo(object):
-    def __init__(self, carro):
-        self.carro = carro
+    def __init__(self, categoria):
+        self.categoria = categoria
+
+    @property
+    def getCategoria(self):
+        return self.categoria
+
+    def setCategoria(self, categoria):
+        self.categoria = input("DIGITE O NOME DA CATEGORIA: ")
 
 class Carro(Veiculo):
-    def __init__(self, marca, modelo, ano, cor):
+    def __init__(self, marca, modelo, ano, cor, categoria):
+        super(Carro, self).__init__(categoria)
         self.marca = marca
         self.modelo = modelo
         self.ano = ano
@@ -40,16 +48,19 @@ class Carro(Veiculo):
 
     @property
     def getCarro(self):
-        return self.listaCar.append(Carro(c1.marca, c1.modelo, c1.ano, c1.cor))
+        return self.listaCar.append(Carro(c1.marca, c1.modelo, c1.ano, c1.cor, c1.categoria))
 
 
-c1 = Carro(" ", " ", " ", " ")
+c1 = Carro(" ", " ", " ", " ", " ")
 c1.setMarca(c1.marca)
 c1.setModelo(c1.modelo)
 c1.setAno(c1.ano)
 c1.setCor(c1.cor)
-print("{} {} {} {}".format(c1.marca, c1.modelo, c1.ano, c1.cor))
+c1.setCategoria(c1.categoria)
+print("Carro: {} {}  |  Ano: {}  |  Cor: {}  |  Categoria: {}".format(c1.marca, c1.modelo, c1.ano, c1.cor, c1.categoria))
 
 listaCar = []
+
+listaCar.append(Carro(c1.marca, c1.modelo, c1.ano, c1.cor, c1.categoria))
 
 print(listaCar)
