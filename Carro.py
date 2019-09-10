@@ -8,63 +8,48 @@ class Carro(Veiculo):
         self.modelo = modelo
         self.ano = ano
         self.cor = cor
-        listaCar = []
+        self.listaCar = []
 
     @property
     def getMarca(self):
         return self.marca
 
     def setMarca(self, marca):
-        self.marca = marca
+        self.marca = input("DIGITE O NOME DA MARCA: ")
 
     @property
     def getModelo(self):
         return self.modelo
 
     def setModelo(self, modelo):
-        self.modelo = modelo
+        self.modelo = input("DIGITE O NOME DA MODELO: ")
 
     @property
     def getAno(self):
         return self.ano
 
     def setAno(self, ano):
-        self.ano = ano
+        self.ano = input("DIGITE O NOME DA ANO: ")
 
     @property
     def getCor(self):
         return self.cor
 
     def setCor(self, cor):
-        self.cor = cor
+        self.cor = input("DIGITE O NOME DA COR: ")
 
     @property
     def getCarro(self):
-        return self.listaCar[self.__init__()]
+        return self.listaCar.append(Carro(c1.marca, c1.modelo, c1.ano, c1.cor))
 
-    def setCarro(self, carro):
-        self.carro = carro
+
+c1 = Carro(" ", " ", " ", " ")
+c1.setMarca(c1.marca)
+c1.setModelo(c1.modelo)
+c1.setAno(c1.ano)
+c1.setCor(c1.cor)
+print("{} {} {} {}".format(c1.marca, c1.modelo, c1.ano, c1.cor))
 
 listaCar = []
-listaVeiculo = []
-c1 = Carro("Ford", "Ranger", 2019, "Branco")
-print("{} {} {} {}".format(c1.marca, c1.modelo, c1.ano, c1.cor))
-listaCar.append(c1.marca)
-listaCar.append(c1.modelo)
-listaCar.append(c1.ano)
-listaCar.append(c1.cor)
 
-c1.marca = input("DIGITE O NOME DA MARCA: ")
-c1.modelo = input("DIGITE O NOME DA MODELO: ")
-c1.ano = input("DIGITE O NOME DA ANO: ")
-c1.cor = input("DIGITE O NOME DA COR: ")
-print(c1.marca, c1.modelo, c1.ano, c1.cor)
-listaCar.append(c1.marca)
-listaCar.append(c1.modelo)
-listaCar.append(c1.ano)
-listaCar.append(c1.cor)
-
-listaVeiculo.append(listaCar)
-
-for i in listaVeiculo:
-    print(i)
+print(listaCar)
