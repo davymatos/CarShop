@@ -1,17 +1,17 @@
 class Veiculo(object):
-    def __init__(self, categoria):
-        self.categoria = categoria
+    def __init__(self, chassis):
+        self.chassis = chassis
 
     @property
-    def getCategoria(self):
-        return self.categoria
+    def getChassis(self):
+        return self.chassis
 
-    def setCategoria(self, categoria):
-        self.categoria = input("DIGITE O NOME DA CATEGORIA: ")
+    def setChassis(self, chassis):
+        self.chassis = input("DIGITE O NOME DA CHASSIS: ")
 
 class Carro(Veiculo):
-    def __init__(self, marca, modelo, ano, cor, categoria):
-        super(Carro, self).__init__(categoria)
+    def __init__(self, marca, modelo, ano, cor, chassis):
+        super(Carro, self).__init__(chassis)
         self.marca = marca
         self.modelo = modelo
         self.ano = ano
@@ -48,19 +48,43 @@ class Carro(Veiculo):
 
     @property
     def getCarro(self):
-        return self.listaCar.append(Carro(c1.marca, c1.modelo, c1.ano, c1.cor, c1.categoria))
+        return self.listaCar.append(Carro(c1.marca, c1.modelo, c1.ano, c1.cor, c1.chassis))
 
+    def setCarro(self):
+        self.listaCar.append(Carro)
+
+listaCar = []
+carros = []
 
 c1 = Carro(" ", " ", " ", " ", " ")
 c1.setMarca(c1.marca)
 c1.setModelo(c1.modelo)
 c1.setAno(c1.ano)
 c1.setCor(c1.cor)
-c1.setCategoria(c1.categoria)
-print("Carro: {} {}  |  Ano: {}  |  Cor: {}  |  Categoria: {}".format(c1.marca, c1.modelo, c1.ano, c1.cor, c1.categoria))
+c1.setChassis(c1.chassis)
 
-listaCar = []
+'''
+listaCar.append(Carro(c1.marca, c1.modelo, c1.ano, c1.cor, c1.chassis))
 
-listaCar.append(Carro(c1.marca, c1.modelo, c1.ano, c1.cor, c1.categoria))
+for j in listaCar:
+    print(listaCar[0])
+    print(listaCar[1])
+    print(listaCar[2])
+    print(listaCar[3])
+    print(listaCar[4])
+'''
 
-print(listaCar)
+listaCar.append(c1.getMarca)
+listaCar.append(c1.getModelo)
+listaCar.append(c1.getAno)
+listaCar.append(c1.getCor)
+listaCar.append(c1.getChassis)
+
+carros.append(listaCar)
+
+for i in carros:
+    print("Marca: ", i[0])
+    print("Modelo: ", i[1])
+    print("Ano: ", i[2])
+    print("Cor: ", i[3])
+    print("Chassis: ", i[4])
