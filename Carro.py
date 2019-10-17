@@ -5,16 +5,16 @@ class Carro(Veiculo):
         super(Carro, self).__init__(marca, modelo, ano, cor, chassis)
         self.listaCar = []
 
-    @property
+    #@property
     def getCarro(self):
-        self.listaCar.append(c1.getMarca)
-        self.listaCar.append(c1.getModelo)
-        self.listaCar.append(c1.getAno)
-        self.listaCar.append(c1.getCor)
-        self.listaCar.append(c1.getChassis)
+        return self.listaCar
 
     def setCarro(self):
-        self.listaCar.append(Carro)
+        self.listaCar.append(c1.getCarro())
+        self.listaCar.append(c1.getModelo())
+        self.listaCar.append(c1.getAno())
+        self.listaCar.append(c1.getCor())
+        self.listaCar.append(c1.getChassis())
 
 
 
@@ -26,8 +26,7 @@ c1.setCor(c1.cor)
 c1.setChassis(c1.chassis)
 
 print("Carro: {} {}  |  Ano: {}  |  Cor: {}   |   Chassis: {}".format(c1.marca, c1.modelo, c1.ano, c1.cor, c1.chassis))
-
-print(c1.getCarro)
+print(c1.getCarro())
 
 
 '''
